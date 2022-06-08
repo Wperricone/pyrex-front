@@ -3,6 +3,7 @@ import './App.css';
 import AllPyrexContainer from './AllPyrexContainer';
 import PatternTile from './PatternTile';
 import NavBar from './NavBar';
+import PatternDetail from './PatternDetail';
 import { fetchAllPatterns, fetchOnePattern } from './apiCalls'
 
 class App extends Component {
@@ -29,7 +30,9 @@ class App extends Component {
 
           <AllPyrexContainer
           patternData={this.state.pyrexPatterns}
-
+          />
+          <PatternDetail
+          seePatternOptions={this.seePatternOptions}
           />
 
         </div>
