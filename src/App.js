@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import { fetchAllPatterns } from './apiCalls'
+import AllPyrexContainer from './AllPyrexContainer';
+import PatternTile from './PatternTile';
+import { fetchAllPatterns, fetchOnePattern } from './apiCalls'
 
 class App extends Component {
   constructor() {
@@ -13,8 +15,9 @@ class App extends Component {
 
   componentDidMount = () => {
     fetchAllPatterns()
-    .then(data => this.setState())
-  }
+    .then(data => this.setState( {pyrexPatterns: data.patterns }))
+    .catch(err => this.setState({ error: "Something went wrong, please try again!" }))
+  };
 
   render() {
     return (
@@ -29,9 +32,16 @@ class App extends Component {
           </p>
 
         </header>
+        <body>
+          <AllPyrexContainer
+          patternData={this.state.pyrexPatterns}
+
+          />
+
+        </body>
       </main>
     );
-  }
-}
+  };
+};
 
 export default App;
