@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import AllPyrexContainer from './AllPyrexContainer';
 import PatternTile from './PatternTile';
+import NavBar from './NavBar';
 import { fetchAllPatterns, fetchOnePattern } from './apiCalls'
 
 class App extends Component {
@@ -22,23 +23,16 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-        <header className="App-header">
-          <h1>Welcome to Pyrex!</h1>
-          <img src='https://i.ibb.co/6NJNLMs/download.jpg' className="test-img" alt="balloons" />
-          <img src='https://i.ibb.co/nkxVvQr/th-butterflygold1.jpg' className="test-img" alt="butterfly-gold" />
+        <NavBar />
 
-          <p>
-            Here is Pyrex!
-          </p>
+        <div>
 
-        </header>
-        <body>
           <AllPyrexContainer
           patternData={this.state.pyrexPatterns}
 
           />
 
-        </body>
+        </div>
       </main>
     );
   };
