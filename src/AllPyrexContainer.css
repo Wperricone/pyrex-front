@@ -1,0 +1,9 @@
+.patterns-container {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 0px;
+  background-color: #FFF;
+  color: #000;
+  justify-content: space-around;
+}
