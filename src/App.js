@@ -20,17 +20,17 @@ class App extends Component {
     }
   };
 
+
   componentDidMount = () => {
     fetchAllPatterns()
     .then(data => this.setState( {pyrexPatterns: data.patterns }))
     .catch(err => this.setState({ error: "Something went wrong, please try again!" }))
   };
 
+
   seePatternOptions = (id) => {
-    console.log("THERE", id);
     fetchOnePattern(id)
     .then(data => {
-      console.log("HERE", data);
       this.setState({ patternOptions: data})
   })
 
@@ -40,11 +40,10 @@ class App extends Component {
   addFavorite = (newFavorite) => {
     this.setState({ favorites: [...this.state.favorites, newFavorite] })
   }
-  submitFavorite = event => {
-    const newFavorite = {
-      ...this.state
-    }
-    this.props.addFavorite(newFavorite);
+  submitFavorite = (event) => {
+    const newFavorite = this.state.patternOptions;
+    console.log(newFavorite);
+    this.addFavorite(newFavorite);
   }
 
   render() {
@@ -61,17 +60,21 @@ class App extends Component {
             />
           }/>
           {this.state.patternOptions &&
-          <Route exact path="/patterns/:id" render={({ match }) =>
+          <Route exact path="/patterns/:id" render={() =>
               <PatternDetail
               patternOptions={this.state.patternOptions}
               seePatternOptions={this.seePatternOptions}
-              // idMatch={parseInt(match.params.id)}
+              submitFavorite={this.submitFavorite}
+              addFavorite={this.addFavorites}
+              //idMatch={parseInt(match.params.id)}
               />
             }/>
           }
           <Route exact path="/patterns/favorites" render={ () =>
             <Favorites
-            addFavorite={this.state.favorites}
+            favorites={this.state.favorites}
+            submitFavorite={this.submitFavorite}
+            addFavorite={this.addFavorites}
             />
           }/>
         </div>
