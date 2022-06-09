@@ -4,6 +4,7 @@ import AllPyrexContainer from './AllPyrexContainer';
 import PatternTile from './PatternTile';
 import NavBar from './NavBar';
 import PatternDetail from './PatternDetail';
+import Favorites from './Favorites';
 import { fetchAllPatterns, fetchOnePattern } from './apiCalls'
 import { BrowserRouter, Route } from 'react-router-dom';
 
@@ -13,6 +14,8 @@ class App extends Component {
     super();
     this.state = {
       pyrexPatterns: [],
+      patternOptions: {},
+      favorites: [],
       error: ""
     }
   };
@@ -34,6 +37,16 @@ class App extends Component {
     .catch(err => this.setState({ error: "Something went wrong, please try again" }))
   };
 
+  addFavorite = (newFavorite) => {
+    this.setState({ favorites: [...this.state.favorites, newFavorite] })
+  }
+  submitFavorite = event => {
+    const newFavorite = {
+      ...this.state
+    }
+    this.props.addFavorite(newFavorite);
+  }
+
   render() {
     return (
       <main className="App">
@@ -44,6 +57,7 @@ class App extends Component {
             <AllPyrexContainer
             seePatternOptions={this.seePatternOptions}
             patternData={this.state.pyrexPatterns}
+            addFavorite={this.state.favorites}
             />
           }/>
           {this.state.patternOptions &&
@@ -55,6 +69,11 @@ class App extends Component {
               />
             }/>
           }
+          <Route exact path="/patterns/favorites" render={ () =>
+            <Favorites
+            addFavorite={this.state.favorites}
+            />
+          }/>
         </div>
       </main>
     );
