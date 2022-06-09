@@ -9,20 +9,22 @@ class PatternDetail extends Component {
       patternOptions: {}
     }
   };
-  componentDidMount = (id) => {
-    this.seePatternOptions(this.props.idMatch)
-  };
+  // componentDidMount = (id) => {
+  //   this.seePatternOptions(this.props.idMatch)
+  // };
 
-  seePatternOptions = (id) => {
-    fetchOnePattern(id)
-    .then(data => this.setState({ patternOptions: data.pattern}))
-    .catch(err => this.setState({ error: "Something went wrong, please try again" }))
-  };
 
   render() {
+    // console.log("PROPS", this.props);
+    // if (!this.props.name) {
+    //   return <p>loading...</p>
+    // }
     return (
       <section className='pattern-detail'>
-        <img className='pattern-image' src={this.state.patternOptions.image} alt='pattern-image'/>
+        <h2 className='pattern-name'>{this.props.patternOptions.name}
+        </h2>
+        <img className='pattern-image' src={this.props.patternOptions.img} alt='pattern-image'/>
+
         <button className='add-to-favorites'> Add To Favorites
         </button>
         <button className='add-to-collection'> Add To My Collection>
@@ -30,8 +32,7 @@ class PatternDetail extends Component {
       </section>
     )
   }
-
-}
+};
 
 
 export default PatternDetail;

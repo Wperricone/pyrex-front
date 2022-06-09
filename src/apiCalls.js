@@ -12,6 +12,7 @@ const fetchAllPatterns = () => {
 }
 
 const fetchOnePattern = (id) => {
+  console.log("API", id);
   return fetch(`http://localhost:3001/api/v1/patterns/${id}`)
     .then(res => {
       if (!res.ok) {
