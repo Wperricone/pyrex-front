@@ -1,37 +1,35 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './PatternDetail.css';
-import { fetchAllPatterns, fetchOnePattern } from './apiCalls'
+import { Link } from 'react-router-dom';
 
-class PatternDetail extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      patternOptions: {}
-    }
-  };
+
+const PatternDetail = ( props, {submitFavorite, addFavorite} ) => {
+
   // componentDidMount = (id) => {
   //   this.seePatternOptions(this.props.idMatch)
   // };
 
 
-  render() {
-    // console.log("PROPS", this.props);
+
+    //console.log("PROPS", props.id);
     // if (!this.props.name) {
     //   return <p>loading...</p>
     // }
     return (
       <section className='pattern-detail'>
-        <h2 className='pattern-name'>{this.props.patternOptions.name}
-        </h2>
-        <img className='pattern-image' src={this.props.patternOptions.img} alt='pattern-image'/>
 
-        <button className='add-to-favorites'> Add To Favorites
-        </button>
-        <button className='add-to-collection'> Add To My Collection>
+        <h2 className='pattern-name'>{props.patternOptions.name}
+        </h2>
+        <img className='pattern-image' src={props.patternOptions.img} alt='pattern-image'/>
+        <Link to={'/favorites'}>
+          <button className='add-to-favorites' onClick={(event) => props.submitFavorite(event)}> Add To Favorites
+          </button>
+        </Link>
+        <button  className='add-to-collection'> Add To My Collection
         </button>
       </section>
     )
-  }
+
 };
 
 

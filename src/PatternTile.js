@@ -2,7 +2,7 @@ import React from 'react';
 import './PatternTile.css';
 import { Link } from 'react-router-dom';
 
-const PatternTile = ({ id, patternName, image, seePatternOptions }) => {
+const PatternTile = ({ id, patternName, image, seePatternOptions, submitFavorite, addFavorite }) => {
   return (
     <div className='tile'>
       <div className='tile'>
