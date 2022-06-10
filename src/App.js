@@ -5,6 +5,8 @@ import PatternTile from './PatternTile';
 import NavBar from './NavBar';
 import PatternDetail from './PatternDetail';
 import { fetchAllPatterns, fetchOnePattern } from './apiCalls'
+import { BrowserRouter, Route } from 'react-router-dom';
+
 
 class App extends Component {
   constructor() {
@@ -21,20 +23,38 @@ class App extends Component {
     .catch(err => this.setState({ error: "Something went wrong, please try again!" }))
   };
 
+  seePatternOptions = (id) => {
+    console.log("THERE", id);
+    fetchOnePattern(id)
+    .then(data => {
+      console.log("HERE", data);
+      this.setState({ patternOptions: data})
+  })
+
+    .catch(err => this.setState({ error: "Something went wrong, please try again" }))
+  };
+
   render() {
     return (
       <main className="App">
         <NavBar />
 
         <div>
-
-          <AllPyrexContainer
-          patternData={this.state.pyrexPatterns}
-          />
-          <PatternDetail
-          seePatternOptions={this.seePatternOptions}
-          />
-
+          <Route exact path="/" render={ () =>
+            <AllPyrexContainer
+            seePatternOptions={this.seePatternOptions}
+            patternData={this.state.pyrexPatterns}
+            />
+          }/>
+          {this.state.patternOptions &&
+          <Route exact path="/patterns/:id" render={({ match }) =>
+              <PatternDetail
+              patternOptions={this.state.patternOptions}
+              seePatternOptions={this.seePatternOptions}
+              // idMatch={parseInt(match.params.id)}
+              />
+            }/>
+          }
         </div>
       </main>
     );
