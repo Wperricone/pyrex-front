@@ -1,0 +1,16 @@
+.nav-bar {
+
+}
+.navigation {
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav-button {
+  text-decoration: none;
+  color: #000;
+}
+
+.nav-button:hover {
+  text-decoration: underline;
+}
