@@ -1,10 +1,10 @@
 import React from 'react';
 import './Favorites.css';
-import { Link } from 'react-router-dom';
 
 const Favorites = (props) => {
 
-  return (
+  {return (
+    props.favorites.length ?
     <section className='favorites-detail'>
       <h2 className='favorites-name'>{props.favorites[0].name}
       </h2>
@@ -15,7 +15,10 @@ const Favorites = (props) => {
       <button className='add-to-collection'> Add To My Collection
       </button>
     </section>
-  )
+    : <p>No Patterns in Your Favorites Yet</p>)
+  }
+  <></>
+
 }
 
 export default Favorites;

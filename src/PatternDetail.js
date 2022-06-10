@@ -3,7 +3,7 @@ import './PatternDetail.css';
 import { Link } from 'react-router-dom';
 
 
-const PatternDetail = ( props, {submitFavorite, addFavorite} ) => {
+const PatternDetail = ( props, {submitFavorite, addFavorite, submitToCollection, addToCollection} ) => {
 
   // componentDidMount = (id) => {
   //   this.seePatternOptions(this.props.idMatch)
@@ -24,9 +24,12 @@ const PatternDetail = ( props, {submitFavorite, addFavorite} ) => {
         <Link to={'/favorites'}>
           <button className='add-to-favorites' onClick={(event) => props.submitFavorite(event)}> Add To Favorites
           </button>
-        </Link>
-        <button  className='add-to-collection'> Add To My Collection
+          </Link>
+          <Link to={'/favorites'}>
+        <button  className='add-to-collection' onClick={(event) =>
+        props.submitToCollection(event)}> Add To My Collection
         </button>
+        </Link>
       </section>
     )
 
