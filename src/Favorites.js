@@ -4,10 +4,9 @@ import { Link } from 'react-router-dom';
 
 const Favorites = (props) => {
 
-  console.log("ADD", props)
   return (
     <section className='favorites-detail'>
-      <h2 className='favorites-name'>HERE{props.favorites[0].name}
+      <h2 className='favorites-name'>{props.favorites[0].name}
       </h2>
       <img className='favorites-image' src={props.favorites[0].img} alt='pattern-image'/>
 
