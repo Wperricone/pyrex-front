@@ -70,12 +70,13 @@ class App extends Component {
               />
             }/>
           }
-          <Route exact path="/patterns/favorites" render={ () =>
+          <Route exact path="/favorites" render={ () =>
+            <div>
             <Favorites
             favorites={this.state.favorites}
-            submitFavorite={this.submitFavorite}
-            addFavorite={this.addFavorites}
             />
+            <h1>random</h1>
+            </div>
           }/>
         </div>
       </main>
