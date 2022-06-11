@@ -1,0 +1,8 @@
+[
+  { "id": "1", "name": "Gooseberry", "tags": ["leaves", "berries", "flowers", "gooseberry"], "colors": ["yellow", "black", "pink", "white"], "img": "https://i.ibb.co/yPJKLwC/th-gooseberry.jpg"},
+
+  { "id": "2", "name": "Pink Daisy", "tags": ["flowers", "daisy", "daisies"], "colors": ["pink", "white"], "img": "https://i.ibb.co/yFTMxMP/th-pinkdaisy.jpg"},
+
+  { "id": "3", "name": "Snowflake", "tags": ["snowflake", "snowflakes", "snow", "winter"], "colors": ["turquoise", "black", "white"], "img": "https://i.ibb.co/Cw0R9mW/download-1.jpg"}
+
+]

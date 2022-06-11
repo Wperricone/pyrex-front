@@ -3,7 +3,7 @@ import './PatternDetail.css';
 import { Link } from 'react-router-dom';
 
 
-const PatternDetail = ( props, {submitFavorite, addFavorite, submitToCollection, addToCollection} ) => {
+const PatternDetail = ( props, {submitFavorite, addFavorite, submitToCollection, addToCollection, deleteFavorite, favorites, uniqueID} ) => {
 
   // componentDidMount = (id) => {
   //   this.seePatternOptions(this.props.idMatch)
@@ -17,7 +17,7 @@ const PatternDetail = ( props, {submitFavorite, addFavorite, submitToCollection,
     // }
     return (
       <section className='pattern-detail'>
-
+        {uniqueID && console.log("PROPSSSS", uniqueID)}
         <h2 className='pattern-name'>{props.patternOptions.name}
         </h2>
         <img className='pattern-image' src={props.patternOptions.img} alt='pattern-image'/>

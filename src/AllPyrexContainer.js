@@ -2,7 +2,7 @@ import React from 'react';
 import './AllPyrexContainer.css';
 import PatternTile from './PatternTile';
 
-const AllPyrexContainer = ({ patternData, seePatternOptions }) => {
+const AllPyrexContainer = ({ patternData, seePatternOptions, deleteFavorite, favorites }) => {
 const patternTile = patternData.map(pattern => {
   return (
     <PatternTile

@@ -3,22 +3,26 @@ import './Favorites.css';
 
 const Favorites = (props) => {
 
-  {return (
-    props.favorites.length ?
-    <section className='favorites-detail'>
-      <h2 className='favorites-name'>{props.favorites[0].name}
-      </h2>
-      <img className='favorites-image' src={props.favorites[0].img} alt='pattern-image'/>
+const stageFavorites =
+  props.favorites.map(pattern => {
 
-      <button className='delete-from-favorites'> Delete From Favorites
+    console.log("FAVS", props.favorites)
+  return (<section className='favorites-detail'>
+      <h3 className='favorites-name'>{pattern.name}
+      </h3>
+      <img className='favorites-image' src={pattern.img} alt='pattern-image'/>
+
+
+      <button className='delete-from-favorites' onClick={() =>
+         props.deleteFavorite(props.favorites.id)}> Delete From Favorites
       </button>
       <button className='add-to-collection'> Add To My Collection
       </button>
-    </section>
-    : <p>No Patterns in Your Favorites Yet</p>)
+    </section>)
+  })
+  return (props.favorites.length ?
+  <p>{stageFavorites}</p>: <p>No Patterns in Your Favorites Yet</p>)
   }
-  <></>
 
-}
 
 export default Favorites;

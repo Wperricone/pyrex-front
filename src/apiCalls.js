@@ -19,7 +19,34 @@ const fetchOnePattern = (id) => {
     }
     return res.json();
   })
-}
+};
+
+const postFavorite = ((id, name, img) => {
+
+  return fetch('http://localhost:3001/api/v1/patterns', {
+    method: 'POST',
+    body: JSON.stringify ({
+      "id": id, "name":name, "img":img
+    }),
+    headers:{
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(res => res.json())
+});
 
 
-export {fetchAllPatterns, fetchOnePattern}
+const deleteFavorite = (id) => {
+  return fetch('http://localhost:3001/api/v1/favorites', {
+    method: 'DELETE',
+    headers:{
+      'Content-Type': 'application.json'
+    },
+    body:JSON.stringify({id})
+  })
+  .then(res => res.json())
+  }
+
+
+
+export {fetchAllPatterns, fetchOnePattern, deleteFavorite, postFavorite}
