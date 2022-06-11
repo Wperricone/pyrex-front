@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 const NavBar = () => {
   return (
     <div className='nav-bar'>
-      <h1>Welcome to Pyrex!</h1>
+      <h1 className='site-title'>Welcome to Pyrex Party!</h1>
         <div className="navigation">
           <NavLink className='nav-button' exact to="/"> See All Patterns
           </NavLink>

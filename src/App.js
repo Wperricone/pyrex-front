@@ -6,7 +6,7 @@ import NavBar from './NavBar';
 import PatternDetail from './PatternDetail';
 import Favorites from './Favorites';
 import MyCollection from './MyCollection';
-import { fetchAllPatterns, fetchOnePattern } from './apiCalls'
+import { fetchAllPatterns, fetchOnePattern, deleteFavorite } from './apiCalls'
 import { BrowserRouter, Route } from 'react-router-dom';
 
 
@@ -25,7 +25,8 @@ class App extends Component {
 
   componentDidMount = () => {
     fetchAllPatterns()
-    .then(data => this.setState( {pyrexPatterns: data.patterns }))
+    .then(data => {console.log("DATA", data)
+    this.setState( {pyrexPatterns: data.patterns.patterns })})
     .catch(err => this.setState({ error: "Something went wrong, please try again!" }))
   };
 
@@ -59,6 +60,12 @@ class App extends Component {
     this.addToCollection(newCollect);
   }
 
+  deleteFavorite = (id) => {
+    deleteFavorite(id)
+    .then(() => this.componentDidMount())
+    .catch(error => this.setState({errors:"Unable to delete right now, please try again!"}))
+  }
+
   render() {
     return (
       <main className="App">
@@ -71,6 +78,10 @@ class App extends Component {
             patternData={this.state.pyrexPatterns}
             addFavorite={this.state.favorites}
             addToCollection={this.addToCollection}
+            deleteFavorite={this.deleteFavorite}
+            favorites={this.state.favorites}
+
+
             />
           }/>
           {this.state.patternOptions &&
@@ -82,18 +93,23 @@ class App extends Component {
               addFavorite={this.addFavorites}
               submitToCollection={this.submitToCollection}
               addToCollection={this.addToCollection}
+              deleteFavorite={this.deleteFavorite}
+              favorites={this.state.favorites}
+
               //idMatch={parseInt(match.params.id)}
               />
             }/>
           }
           <Route exact path="/favorites" render={ () =>
             <div>
+            <h2>Favorites</h2>
+
             <Favorites
             favorites={this.state.favorites}
             collection={this.state.collection}
-
+            deleteFavorite={this.deleteFavorite}
             />
-            <h3>My Collection</h3>
+            <h2>My Collection</h2>
             <MyCollection
             favorites={this.state.favorites}
             collection={this.state.collection}

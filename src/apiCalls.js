@@ -19,7 +19,19 @@ const fetchOnePattern = (id) => {
     }
     return res.json();
   })
-}
+};
+
+const deleteFavorite = (id) => {
+  return fetch('http://localhost:3001/api/v1/favorites', {
+    method: 'DELETE',
+    headers:{
+      'Content-Type': 'application.json'
+    },
+    body:JSON.stringify({id})
+  })
+  .then(res => res.json())
+  }
 
 
-export {fetchAllPatterns, fetchOnePattern}
+
+export {fetchAllPatterns, fetchOnePattern, deleteFavorite}

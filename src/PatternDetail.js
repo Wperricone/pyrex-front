@@ -3,7 +3,7 @@ import './PatternDetail.css';
 import { Link } from 'react-router-dom';
 
 
-const PatternDetail = ( props, {submitFavorite, addFavorite, submitToCollection, addToCollection} ) => {
+const PatternDetail = ( props, {submitFavorite, addFavorite, submitToCollection, addToCollection, deleteFavorite, favorites} ) => {
 
   // componentDidMount = (id) => {
   //   this.seePatternOptions(this.props.idMatch)
