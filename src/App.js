@@ -24,12 +24,14 @@ class App extends Component {
   };
 
 
-  componentDidMount = () => {
+  componentDidMount () {
     fetchAllPatterns()
     .then(data => {console.log("DATA", data)
     this.setState( {pyrexPatterns: data.patterns.patterns, favorites: data.patterns.favorites })})
     .catch(err => this.setState({ error: "Something went wrong, please try again!" }))
   };
+
+
 
 
   seePatternOptions = (id) => {
@@ -44,21 +46,23 @@ class App extends Component {
   };
 
   addFavorite = (newFavorite) => {
+    if (!this.state.favorites.includes(newFavorite)) {
     this.setState({
       ...this.state,
       favorites: [...this.state.favorites, newFavorite],
     }, () => {this.saveFav(this.state.favorites)} )
+    }
+  };
 
-
-  }
   submitFavorite = (event) => {
     const newFavorite = this.state.patternOptions;
     this.addFavorite(newFavorite);
 
 
-  }
+  };
 
   saveFav = () => {
+
     const findPattern = this.state.favorites.find(favorite => favorite.id === this.state.specificPatternID)
     postFavorite(findPattern.id, findPattern.name, findPattern.img)
     .then(data => console.log("DAAAATA", data)
@@ -66,7 +70,7 @@ class App extends Component {
   )
     console.log("SPEC", this.state.specificPatternID);
     console.log("POOP", findPattern);
-  }
+  };
 
 
   addToCollection = (newCollect) => {
@@ -121,7 +125,6 @@ class App extends Component {
             }/>
           }
 
-          {this.state.specificPatternID &&
           <Route exact path="/favorites" render={ () =>
             <div>
             <h2>Favorites</h2>
@@ -139,7 +142,7 @@ class App extends Component {
 
             </div>
           }/>
-        }
+        
           </section>
       </main>
     );
