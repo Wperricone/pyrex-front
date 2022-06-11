@@ -21,6 +21,21 @@ const fetchOnePattern = (id) => {
   })
 };
 
+const postFavorite = ((id, name, img) => {
+
+  return fetch('http://localhost:3001/api/v1/patterns', {
+    method: 'POST',
+    body: JSON.stringify ({
+      "id": id, "name":name, "img":img
+    }),
+    headers:{
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(res => res.json())
+});
+
+
 const deleteFavorite = (id) => {
   return fetch('http://localhost:3001/api/v1/favorites', {
     method: 'DELETE',
@@ -34,4 +49,4 @@ const deleteFavorite = (id) => {
 
 
 
-export {fetchAllPatterns, fetchOnePattern, deleteFavorite}
+export {fetchAllPatterns, fetchOnePattern, deleteFavorite, postFavorite}
