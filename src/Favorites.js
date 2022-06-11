@@ -1,13 +1,12 @@
 import React from 'react';
 import './Favorites.css';
-import { Link } from 'react-router-dom';
 
 const Favorites = (props) => {
 
-  console.log("ADD", props)
-  return (
+  {return (
+    props.favorites.length ?
     <section className='favorites-detail'>
-      <h2 className='favorites-name'>HERE{props.favorites[0].name}
+      <h2 className='favorites-name'>{props.favorites[0].name}
       </h2>
       <img className='favorites-image' src={props.favorites[0].img} alt='pattern-image'/>
 
@@ -16,7 +15,10 @@ const Favorites = (props) => {
       <button className='add-to-collection'> Add To My Collection
       </button>
     </section>
-  )
+    : <p>No Patterns in Your Favorites Yet</p>)
+  }
+  <></>
+
 }
 
 export default Favorites;

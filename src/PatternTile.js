@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const PatternTile = ({ id, patternName, image, seePatternOptions, submitFavorite, addFavorite }) => {
   return (
-    <div className='tile'>
+    <div className='tile-big'>
       <div className='tile'>
         <div className='pattern-img'>
           <img src={image} alt="pattern-image"/>
