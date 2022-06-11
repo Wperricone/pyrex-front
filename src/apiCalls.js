@@ -40,7 +40,7 @@ const deleteFavorite = (id) => {
   return fetch('http://localhost:3001/api/v1/favorites', {
     method: 'DELETE',
     headers:{
-      'Content-Type': 'application.json'
+      'Content-Type': 'application/json'
     },
     body:JSON.stringify({id})
   })

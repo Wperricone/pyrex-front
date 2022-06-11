@@ -30,11 +30,12 @@ render () {
     return (<section key={pattern.id} className='favorites-detail'>
         <h3 className='favorites-name'>{pattern.name}
         </h3>
-        <img className='favorites-image' src={pattern.img} alt='pattern-image'/>
+        <img className='favorites-image' src={pattern.img} alt='pattern-image'
+        />
 
 
         <button className='delete-from-favorites' onClick={() =>
-           this.props.deleteFavorite(this.props.favorites.id)}> Delete From Favorites
+           this.props.deleteFavorite(pattern.id)}> Delete From Favorites
         </button>
         <button className='add-to-collection'> Add To My Collection
         </button>
