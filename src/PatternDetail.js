@@ -21,15 +21,15 @@ const PatternDetail = ( props, {submitFavorite, addFavorite, submitToCollection,
         <h2 className='pattern-name'>{props.patternOptions.name}
         </h2>
         <img className='pattern-image' src={props.patternOptions.img} alt='pattern-image'/>
-        <Link to={'/favorites'}>
-          <button className='add-to-favorites' onClick={(event) => props.submitFavorite(event)}> Add To Favorites
+
+          <button className='add-to-favorites' onClick={() => props.submitFavorite()}> Add To Favorites
           </button>
-          </Link>
-          <Link to={'/favorites'}>
-        <button  className='add-to-collection' onClick={(event) =>
-        props.submitToCollection(event)}> Add To My Collection
+
+
+        <button  className='add-to-collection' onClick={() =>
+        props.submitToCollection()}> Add To My Collection
         </button>
-        </Link>
+
       </section>
     )
 

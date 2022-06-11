@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import { fetchAllPatterns, fetchOnePattern, deleteFavorite, postFavorite } from './apiCalls';
 import './Favorites.css';
 
-// const Favorites = (props) => {
 
 class Favorites extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      favorites: [],
+      favorites: this.props.favorites,
     }
   };
 

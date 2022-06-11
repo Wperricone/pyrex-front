@@ -54,15 +54,12 @@ class App extends Component {
     }
   };
 
-  submitFavorite = (event) => {
+  submitFavorite = () => {
     const newFavorite = this.state.patternOptions;
     this.addFavorite(newFavorite);
-
-
   };
 
   saveFav = () => {
-
     const findPattern = this.state.favorites.find(favorite => favorite.id === this.state.specificPatternID)
     postFavorite(findPattern.id, findPattern.name, findPattern.img)
     .then(data => console.log("DAAAATA", data)
@@ -142,7 +139,7 @@ class App extends Component {
 
             </div>
           }/>
-        
+
           </section>
       </main>
     );
