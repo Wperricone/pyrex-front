@@ -10,6 +10,7 @@ const PatternDetail = ( props ) => {
   // };
 
 const isInFavs = () => {
+  console.log("WHU", props.favorites)
   return props.favorites.some((favorite) => {
   return  favorite.id === props.uniqueID
   })

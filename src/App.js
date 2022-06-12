@@ -129,7 +129,7 @@ refresh = () => {
 
           <Route exact path="/favorites" render={ () =>
             <div>
-            <h2>Favorites</h2>
+            <h2 className='favs-title'>Favorites</h2>
 
             <Favorites
             favorites={this.state.favorites}

@@ -14,3 +14,7 @@
 .nav-button:hover {
   text-decoration: underline;
 }
+
+.active {
+  visibility: hidden;
+}
