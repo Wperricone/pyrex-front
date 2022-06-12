@@ -8,7 +8,8 @@ const Favorites = ( {favorites, collection, deleteFavorite} ) => {
   const stageFavorites = () => {
 
     const favs = favorites.map(pattern => {
-      return (<section key={pattern.id} className='favorites-detail'>
+      return (<div className='all-favs-section'>
+      <section key={pattern.id} className='favorites-detail'>
           <h3 className='favorites-name'>{pattern.name}
           </h3>
           <img className='favorites-image' src={pattern.img} alt='pattern-image'
@@ -18,7 +19,8 @@ const Favorites = ( {favorites, collection, deleteFavorite} ) => {
           </button>
           <button className='add-to-collection'> Add To My Collection
           </button>
-        </section>)
+        </section>
+      </div>)
     })
     console.log("FAVS", favs)
     if (favorites.length) {

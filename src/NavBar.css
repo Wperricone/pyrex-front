@@ -29,3 +29,9 @@ font-family: 'Fascinate', cursive;
   padding-bottom: 0px;
   margin-bottom: 0;
 }
+
+@media screen and (max-width: 460px) {
+  .nav-bar {
+    height: 25vh;
+  }
+}

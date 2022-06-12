@@ -9,9 +9,7 @@ const NavBar = () => {
         <div className="navigation">
           <NavLink className='nav-button' exact to="/"> See All Patterns
           </NavLink>
-          <NavLink className='nav-button' to='/search'>Search
-          </NavLink>
-          <NavLink className='fav-button' to='/favorites'> Favorites
+          <NavLink className='nav-button' to='/favorites'> Favorites
           </NavLink>
         </div>
     </div>
