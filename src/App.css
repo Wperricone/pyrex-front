@@ -10,8 +10,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(boomerang.jpg);
+  /* background-image: url(boomerang.jpg); */
   background-color: #FFF;
+  /* filter: brightness(50%);
+  z-index: 1; */
 
 }
 
