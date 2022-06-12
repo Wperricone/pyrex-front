@@ -8,6 +8,7 @@ const PatternDetail = ( props ) => {
 
 
 const isInFavs = () => {
+  console.log("JOSH", props.favorites);
   const result = props.favorites.some((favorite) => {
     console.log("FAVORITE", favorite.id)
     console.log("PROPS.UNI", props.uniqueID);
@@ -27,7 +28,6 @@ const isInFavs = () => {
           {!isInFavs() && <button className='add-to-favorites' onClick={() => props.submitFavorite()}> Add To Favorites
           </button>}
           {isInFavs() && <button className='add-to-favorites' onClick={() => {
-            console.log("UNIQ", props.uniqueID)
              props.deleteFavorite(props.uniqueID)}}> Delete From Favorites
           </button>}
 
