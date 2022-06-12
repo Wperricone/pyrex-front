@@ -130,12 +130,12 @@ refresh = () => {
           <Route exact path="/favorites" render={ () =>
             <div>
             <h2>Favorites</h2>
-            {console.log("IN HERE", this.specificPatternID)}
+
             <Favorites
             favorites={this.state.favorites}
             collection={this.state.collection}
             deleteFavorite={this.deleteFavorite}
-            //uniqueID={this.state.specificPatternID}
+
 
             />
             <h2>My Collection</h2>
