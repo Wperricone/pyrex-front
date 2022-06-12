@@ -24,12 +24,15 @@ class App extends Component {
   };
 
 
-  componentDidMount = () => {
-    fetchAllPatterns()
-    .then(data => {console.log("DATA", data)
-    this.setState( {pyrexPatterns: data.patterns.patterns, favorites: data.patterns.favorites })})
-    .catch(err => this.setState({ error: "Something went wrong, please try again!" }))
+  componentDidMount () {
+    this.refresh()
   };
+
+refresh = () => {
+  fetchAllPatterns()
+  .then ((data) => this.setState( {pyrexPatterns: data.patterns.patterns, favorites: data.patterns.favorites }))
+  .catch(err => this.setState({ error: "Something went wrong, please try again!" }))
+}
 
 
   seePatternOptions = (id) => {
@@ -44,19 +47,19 @@ class App extends Component {
   };
 
   addFavorite = (newFavorite) => {
+
     this.setState({
       ...this.state,
       favorites: [...this.state.favorites, newFavorite],
     }, () => {this.saveFav(this.state.favorites)} )
 
 
-  }
-  submitFavorite = (event) => {
+  };
+
+  submitFavorite = () => {
     const newFavorite = this.state.patternOptions;
     this.addFavorite(newFavorite);
-
-
-  }
+  };
 
   saveFav = () => {
     const findPattern = this.state.favorites.find(favorite => favorite.id === this.state.specificPatternID)
@@ -66,7 +69,7 @@ class App extends Component {
   )
     console.log("SPEC", this.state.specificPatternID);
     console.log("POOP", findPattern);
-  }
+  };
 
 
   addToCollection = (newCollect) => {
@@ -80,8 +83,10 @@ class App extends Component {
   }
 
   deleteFavorite = (id) => {
+    console.log("ID", id);
     deleteFavorite(id)
-    .then(() => this.componentDidMount())
+    .then(() => {this.refresh()})
+
     .catch(error => this.setState({errors:"Unable to delete right now, please try again!"}))
   }
 
@@ -116,12 +121,12 @@ class App extends Component {
               favorites={this.state.favorites}
               uniqueID={this.state.specificPatternID}
 
+
               //idMatch={parseInt(match.params.id)}
               />
             }/>
           }
 
-          {this.state.specificPatternID &&
           <Route exact path="/favorites" render={ () =>
             <div>
             <h2>Favorites</h2>
@@ -130,6 +135,8 @@ class App extends Component {
             favorites={this.state.favorites}
             collection={this.state.collection}
             deleteFavorite={this.deleteFavorite}
+            //uniqueID={this.state.specificPatternID}
+
             />
             <h2>My Collection</h2>
             <MyCollection
@@ -139,7 +146,7 @@ class App extends Component {
 
             </div>
           }/>
-        }
+
           </section>
       </main>
     );
