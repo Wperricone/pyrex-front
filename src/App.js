@@ -7,7 +7,7 @@ import PatternDetail from './PatternDetail';
 import Favorites from './Favorites';
 import MyCollection from './MyCollection';
 import { fetchAllPatterns, fetchOnePattern, deleteFavorite, postFavorite } from './apiCalls'
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 
 class App extends Component {
@@ -18,7 +18,7 @@ class App extends Component {
       patternOptions: {},
       favorites: [],
       collection: [],
-      error: "",
+      errors: false,
       specificPatternID: ""
     }
   };
@@ -94,8 +94,11 @@ refresh = () => {
     return (
       <main className="App">
         <NavBar />
+              { this.state.errors ? <h3> {this.state.errors} </h3> :
 
-        <section>
+        <section className='main-section'>
+
+          <Switch>
           <Route exact path="/" render={ () =>
             <AllPyrexContainer
             seePatternOptions={this.seePatternOptions}
@@ -129,13 +132,13 @@ refresh = () => {
 
           <Route exact path="/favorites" render={ () =>
             <div>
-            <h2>Favorites</h2>
-            {console.log("IN HERE", this.specificPatternID)}
+            <h2 className='favs-title'>Favorites</h2>
+
             <Favorites
             favorites={this.state.favorites}
             collection={this.state.collection}
             deleteFavorite={this.deleteFavorite}
-            //uniqueID={this.state.specificPatternID}
+
 
             />
             <h2>My Collection</h2>
@@ -147,7 +150,10 @@ refresh = () => {
             </div>
           }/>
 
+          <Route render={() => <h2>Looks like you took a wrong turn, click Home to go back!</h2>} />
+          </Switch>
           </section>
+        }
       </main>
     );
   };

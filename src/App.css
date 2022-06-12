@@ -1,6 +1,22 @@
 .App {
   text-align: center;
+  background-color: #f6777a;
+  /* background-image: url('./starburst.jpg');
+  background-size: contain; */
+  /*background-repeat: no-repeat;  */
 }
+
+.main-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-image: url(boomerang.jpg); */
+  background-color: #FFF;
+  /* filter: brightness(50%);
+  z-index: 1; */
+
+}
+
 
 .App-logo {
   height: 40vmin;

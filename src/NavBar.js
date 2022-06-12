@@ -11,7 +11,7 @@ const NavBar = () => {
           </NavLink>
           <NavLink className='nav-button' to='/search'>Search
           </NavLink>
-          <NavLink className='nav-button' to='/favorites'> Favorites
+          <NavLink className='fav-button' to='/favorites'> Favorites
           </NavLink>
         </div>
     </div>
