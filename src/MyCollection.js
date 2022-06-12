@@ -20,7 +20,7 @@ return (<section className='collection-detail'>
 
 console.log("STAGE", stageCollection)
     return (props.collection.length ?
-    <p>{stageCollection}</p>: <p>No Patterns in Your Collection Yet</p>)
+    <p>{stageCollection}</p>: <p className='no-patterns'>No Patterns in Your Collection Yet</p>)
 
 }
 

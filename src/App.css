@@ -7,14 +7,23 @@
 }
 
 .main-section {
+  padding: 20px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  /* background-image: url(boomerang.jpg); */
+  flex-wrap: wrap;
+  grid-gap: 0px;
   background-color: #FFF;
-  /* filter: brightness(50%);
-  z-index: 1; */
+  color: #000;
+  justify-content: space-around;
 
+}
+.all-favs-container {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 0px;
+  background-color: #FFF;
+  color: #000;
+  justify-content: space-around;
 }
 
 
@@ -52,3 +61,5 @@
     transform: rotate(360deg);
   }
 }
+
+@media screen and min-width:

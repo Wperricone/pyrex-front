@@ -2,18 +2,12 @@
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
-  grid-gap: 0px;
-  background-color: #FFF;
-  color: #000;
   justify-content: space-around;
+  height: 84vh;
 }
 
-.patterns-container {
-  height: 84vh;
-  /* background-image: url(boomerang.jpg); */
-
-  /* opacity: 0.5; */
-
-  /* background-image: url('./starburst.jpg'); */
-  /* background-color: #45d2d8; */
+@media screen and (max-width: 460px) {
+  .patterns-container {
+    display: block;
+  }
 }

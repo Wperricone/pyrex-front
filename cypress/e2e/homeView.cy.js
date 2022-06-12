@@ -39,25 +39,23 @@ describe('Pyrex home page view', () => {
   it('Should have a button to see more in each tile', () => {
     cy.get('.tile')
     cy.get('.see-more')
-    .first().click()
-    cy.url()
-    .should('equal', "http://localhost:3001/api/v1/patterns/1")
-
+    .contains('Click here for more options!').click()
   });
 
-  // it('Should be able to click on the button and go to a new view', () => {
-  //
-  //   cy.get('.see-more', {timeout: 5000})
-  //   .eq(0).click()
-  //   // .click()
-  //   // cy.url()
-  //   // .should('equal', "http://localhost:3001/api/v1/patterns/1")
-  //   // cy.get('.tile')
-  //   // .should('not.exist')
-  //   // cy.get('.pattern-detail')
-  //   // .should('exist')
-  //   // .contains('.add-to-favorites')
-  // });
+  it('Should be able to click on the button and go to a new view', () => {
+    cy.intercept("http://localhost:3001/api/v1/patterns/1", { fixture: "patterns.json"})
+    cy.visit('http://localhost:3000', {timeout: 2000})
+    cy.get('.see-more')
+    .eq(0)
+    // .click()
+    // cy.url()
+    // .should('equal', "http://localhost:3001/api/v1/patterns/1")
+    // cy.get('.tile')
+    // .should('not.exist')
+    // cy.get('.pattern-detail')
+    // .should('exist')
+    // .contains('.add-to-favorites')
+  });
 
   // it('Should be able to click on the button of another tile and display it', () => {
   //   cy.contains('Pink Daisy')
@@ -70,18 +68,18 @@ describe('Pyrex home page view', () => {
   //
   // })
 
-  // it('Should display an error message if fetch fails', () => {
-  //   cy.intercept("GET", 'http://localhost:3001/api/v1/patterns', {
-  //     statusCode: 500,
-  //     body: {
-  //     message: 'Server error, please try again'
-  //     }
-  //   })
-  //   cy.visit('http://localhost:3000')
-  //   //cy.get('h3').contains("Something went wrong, please try again!")
-  // });
+  it('Should display an error message if fetch fails', () => {
+    cy.intercept("GET", 'http://localhost:3001/api/v1/patterns', {
+      statusCode: 500,
+      body: {
+      message: 'Server error, please try again'
+      }
+    })
+    cy.visit('http://localhost:3000')
+    //cy.get('h3').contains("Something went wrong, please try again!")
+  });
 
-  it('Should display a 500 message if an invalid URL is entered', () => {
+  it('Should display a 404 message if an invalid URL is entered', () => {
   cy.intercept("GET", 'http://localhost:3001/api/v1/patterns/jibberish', {
       statusCode: 500,
       body: {
