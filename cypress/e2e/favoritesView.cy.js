@@ -1,7 +1,7 @@
 describe('Pyrex home page view', () => {
   beforeEach(() => {
-    cy.intercept("http://localhost:3001/api/v1/patterns", { fixture: "favorites.json"})
-    cy.intercept("http://localhost:3001/api/v1/favorites", { fixture: "favorites.json"})
+    cy.intercept("http://localhost:3001/api/v1/patterns", { fixture: "patterns.json"})
+    cy.intercept("http://localhost:3001/api/v1/favorites", { fixture: "patterns.json"})
     cy.visit('http://localhost:3000/favorites', {timeout: 2000})
   });
 
@@ -10,9 +10,9 @@ describe('Pyrex home page view', () => {
     .contains('Favorites')
   })
 
-  it('Should have three patterns', () => {
+  it('Should have five patterns', () => {
     cy.get('.favorites-detail')
-    .should('have.length', 3)
+    .should('have.length', 5)
   });
 
   it('Should have a button to go to the home page', () => {
@@ -29,14 +29,8 @@ describe('Pyrex home page view', () => {
     cy.get('.delete-from-favorites')
   });
 
-  it('Should have the pattern disappear when the delete button is clicked', () => {
-    cy.get('.delete-from-favorites')
-    .eq(0).dblclick()
-    cy.get('.favorites-detail')
-    .should('have.length', 2)
-  });
 
-  it('Should display a 404 message if an invalid URL is entered', () => {
+  it('Should display a message if an invalid URL is entered', () => {
   cy.intercept("GET", 'http://localhost:3001/api/v1/patterns/jibberish', {
       statusCode: 500,
       body: {
@@ -48,5 +42,16 @@ describe('Pyrex home page view', () => {
   cy.get('h2').contains('Looks like you took a wrong turn, click Home to go back!')
 
   });
+});
 
+describe('Pyrex delete favorite', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/favorites')
+})
+  it('Should have the pattern disappear when the delete button is clicked', () => {
+    cy.get('.delete-from-favorites')
+    .eq(0).dblclick()
+    cy.get('.favorites-detail')
+    .should('have.length', 4)
+  });
 });

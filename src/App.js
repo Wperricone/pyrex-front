@@ -72,15 +72,15 @@ refresh = () => {
   };
 
 
-  addToCollection = (newCollect) => {
-    this.setState({
-      ...this.state,
-      collection: [...this.state.collection, newCollect] })
-  }
-  submitToCollection = (event) => {
-    const newCollect = this.state.patternOptions;
-    this.addToCollection(newCollect);
-  }
+  // addToCollection = (newCollect) => {
+  //   this.setState({
+  //     ...this.state,
+  //     collection: [...this.state.collection, newCollect] })
+  // }
+  // submitToCollection = (event) => {
+  //   const newCollect = this.state.patternOptions;
+  //   this.addToCollection(newCollect);
+  // }
 
   deleteFavorite = (id) => {
     console.log("ID", id);
