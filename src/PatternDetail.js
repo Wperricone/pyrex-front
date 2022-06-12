@@ -5,21 +5,18 @@ import { Link } from 'react-router-dom';
 
 const PatternDetail = ( props ) => {
 
-  // componentDidMount = (id) => {
-  //   this.seePatternOptions(this.props.idMatch)
-  // };
+
 
 const isInFavs = () => {
-  console.log("WHU", props.favorites)
-  return props.favorites.some((favorite) => {
+  const result = props.favorites.some((favorite) => {
+    console.log("FAVORITE", favorite.id)
+    console.log("PROPS.UNI", props.uniqueID);
   return  favorite.id === props.uniqueID
   })
+  return result
 }
 
-    //console.log("PROPS", props.id);
-    // if (!this.props.name) {
-    //   return <p>loading...</p>
-    // }
+
     return (
       <section className='pattern-detail'>
         {props.uniqueID && console.log("PROPSSSS", props.uniqueID)}

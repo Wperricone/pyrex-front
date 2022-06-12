@@ -50,5 +50,13 @@
 "img": "https://i.ibb.co/Cw0R9mW/download-1.jpg"
 }
 ]
-}
+},
+"favorites": [
+  {
+    "id": "3",
+    "name": "Snowflake",
+    "img": "https://i.ibb.co/Cw0R9mW/download-1.jpg"
+  }
+
+]
 }
