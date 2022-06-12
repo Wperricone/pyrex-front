@@ -1,14 +1,19 @@
 .nav-bar {
-
+height: 18vh;
+color: #45d2d8;
+/* font-size: 1vh; */
+font-family: 'Fascinate', cursive;
 }
 .navigation {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .nav-button {
   text-decoration: none;
-  color: #000;
+  color: #45d2d8;
+  font-size: 3.5vh;
 }
 
 .nav-button:hover {
@@ -17,4 +22,10 @@
 
 .active {
   visibility: hidden;
+}
+
+.site-title {
+  padding-top: 10px;
+  padding-bottom: 0px;
+  margin-bottom: 0;
 }

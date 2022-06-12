@@ -1,4 +1,15 @@
 .tile {
+  margin-top: 5%;
   margin-bottom: 5%;
-  border: 3px solid black;
+  border-bottom: 3px solid #f6777a;
+  color: #45d2d8;
+  /* border-radius: 10px; */
+}
+button {
+border-radius: 10px;
+border-width: 4px;
+border-color: #45d2d8;
+margin-bottom: 5%;
+background-color: #f6777a;
+color: #FFF;
 }

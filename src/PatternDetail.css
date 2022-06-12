@@ -4,4 +4,14 @@
   width: 25%;
   justify-content: center;
   align-items: center;
+  /* background-color: #FFF; */
+}
+
+.pattern-image {
+  margin-bottom: 12px;
+}
+
+.pattern-name {
+  color: #45d2d8;
+
 }

@@ -96,7 +96,7 @@ refresh = () => {
         <NavBar />
               { this.state.errors ? <h3> {this.state.errors} </h3> :
 
-        <section>
+        <section className='main-section'>
           <Switch>
           <Route exact path="/" render={ () =>
             <AllPyrexContainer
