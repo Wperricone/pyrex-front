@@ -67,4 +67,29 @@ describe('Pyrex home page view', () => {
   //   .contains('.add-to-favorites')
   //
   // })
+
+  it('Should display an error message if fetch fails', () => {
+    cy.intercept("GET", 'http://localhost:3001/api/v1/patterns', {
+      statusCode: 500,
+      body: {
+      message: 'Server error, please try again'
+      }
+    })
+    cy.visit('http://localhost:3000')
+    //cy.get('h3').contains("Something went wrong, please try again!")
+  });
+
+  it('Should display a 404 message if an invalid URL is entered', () => {
+  cy.intercept("GET", 'http://localhost:3001/api/v1/patterns/jibberish', {
+      statusCode: 500,
+      body: {
+      message: 'Server error. Please try again'
+      }
+    })
+
+  cy.visit('http://localhost:3000/jibberish')
+  cy.get('h2').contains('Looks like you took a wrong turn, click Home to go back!')
+
+});
+
 });

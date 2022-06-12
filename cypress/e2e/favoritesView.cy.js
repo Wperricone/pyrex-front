@@ -34,9 +34,19 @@ describe('Pyrex home page view', () => {
     .eq(0).dblclick()
     cy.get('.favorites-detail')
     .should('have.length', 2)
+  });
 
+  it('Should display a 404 message if an invalid URL is entered', () => {
+  cy.intercept("GET", 'http://localhost:3001/api/v1/patterns/jibberish', {
+      statusCode: 500,
+      body: {
+      message: 'Server error. Please try again'
+      }
+    })
 
-  })
+  cy.visit('http://localhost:3000/jibberish')
+  cy.get('h2').contains('Looks like you took a wrong turn, click Home to go back!')
 
+  });
 
 });
