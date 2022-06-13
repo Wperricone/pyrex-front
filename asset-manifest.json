@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/pyrex-front/static/css/main.d8f1ce85.css",
-    "main.js": "/pyrex-front/static/js/main.990be53a.js",
+    "main.js": "/pyrex-front/static/js/main.7fadf6c1.js",
     "static/js/787.7a1bcfba.chunk.js": "/pyrex-front/static/js/787.7a1bcfba.chunk.js",
     "index.html": "/pyrex-front/index.html",
     "main.d8f1ce85.css.map": "/pyrex-front/static/css/main.d8f1ce85.css.map",
-    "main.990be53a.js.map": "/pyrex-front/static/js/main.990be53a.js.map",
+    "main.7fadf6c1.js.map": "/pyrex-front/static/js/main.7fadf6c1.js.map",
     "787.7a1bcfba.chunk.js.map": "/pyrex-front/static/js/787.7a1bcfba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d8f1ce85.css",
-    "static/js/main.990be53a.js"
+    "static/js/main.7fadf6c1.js"
   ]
 }
