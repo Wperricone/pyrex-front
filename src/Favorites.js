@@ -14,8 +14,6 @@ const Favorites = ( {favorites, deleteFavorite} ) => {
           <button className='delete-from-favorites' onClick={() => deleteFavorite(pattern.id)
              }> Delete From Favorites
           </button>
-          <button className='add-to-collection'> Add To My Collection
-          </button>
       </section>)
     })
       if (favorites.length) {
