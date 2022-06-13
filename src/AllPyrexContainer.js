@@ -1,6 +1,7 @@
 import React from 'react';
 import './AllPyrexContainer.css';
 import PatternTile from './PatternTile';
+import PropTypes from 'prop-types';
 
 const AllPyrexContainer = ({ patternData, seePatternOptions, deleteFavorite, favorites }) => {
 const patternTile = patternData.map(pattern => {
@@ -23,3 +24,10 @@ const patternTile = patternData.map(pattern => {
 };
 
 export default AllPyrexContainer;
+
+AllPyrexContainer.propTypes = {
+  seePatternOptions: PropTypes.func,
+  patternData: PropTypes.array,
+  
+
+};

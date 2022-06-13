@@ -1,6 +1,8 @@
 import React from 'react';
 import './PatternDetail.css';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 
 
 const PatternDetail = ( props ) => {
@@ -43,3 +45,13 @@ const isInFavs = () => {
 
 
 export default PatternDetail;
+
+PatternDetail.propTypes = {
+  patternOptions: PropTypes.object,
+  submitFavorite:PropTypes.func,
+  addFavorite: PropTypes.array,
+  deleteFavorite: PropTypes.func,
+  favorites: PropTypes.array,
+  uniqueID: PropTypes.string
+
+};

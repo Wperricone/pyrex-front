@@ -103,10 +103,10 @@ refresh = () => {
             <AllPyrexContainer
             seePatternOptions={this.seePatternOptions}
             patternData={this.state.pyrexPatterns}
-            addFavorite={this.state.favorites}
-            addToCollection={this.addToCollection}
-            deleteFavorite={this.deleteFavorite}
-            favorites={this.state.favorites}
+            // addFavorite={this.state.favorites}
+            // addToCollection={this.addToCollection}
+            // deleteFavorite={this.deleteFavorite}
+            // favorites={this.state.favorites}
 
 
             />
@@ -115,11 +115,11 @@ refresh = () => {
           <Route exact path="/patterns/:id" render={() =>
               <PatternDetail
               patternOptions={this.state.patternOptions}
-              seePatternOptions={this.seePatternOptions}
+              // seePatternOptions={this.seePatternOptions}
               submitFavorite={this.submitFavorite}
               addFavorite={this.addFavorites}
-              submitToCollection={this.submitToCollection}
-              addToCollection={this.addToCollection}
+              // submitToCollection={this.submitToCollection}
+              // addToCollection={this.addToCollection}
               deleteFavorite={this.deleteFavorite}
               favorites={this.state.favorites}
               uniqueID={this.state.specificPatternID}
@@ -136,7 +136,7 @@ refresh = () => {
             <div className='all-favs-container'>
             <Favorites
             favorites={this.state.favorites}
-            collection={this.state.collection}
+            // collection={this.state.collection}
             deleteFavorite={this.deleteFavorite}
 
             />

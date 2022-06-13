@@ -1,6 +1,8 @@
 import React from 'react';
 import './PatternTile.css';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 
 const PatternTile = ({ id, patternName, image, seePatternOptions, submitFavorite, addFavorite }) => {
   return (
@@ -20,3 +22,13 @@ const PatternTile = ({ id, patternName, image, seePatternOptions, submitFavorite
 };
 
 export default PatternTile;
+
+PatternTile.propTypes = {
+  seePatternOptions: PropTypes.func,
+  id: PropTypes.string,
+  patternName: PropTypes.string,
+  image: PropTypes.string,
+  submitFavorite: PropTypes.func,
+  addFavorite: PropTypes.func
+
+};
