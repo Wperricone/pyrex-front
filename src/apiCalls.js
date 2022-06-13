@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 const fetchAllPatterns = () => {
-  return fetch('http://pyrex-back.herokuapp.com/api/v1/patterns')
+  return fetch('http://localhost:3001/api/v1/patterns')
   .then(res => {
     if(!res.ok) {
       throw new Error("Something went wrong")
@@ -11,7 +11,7 @@ const fetchAllPatterns = () => {
 };
 
 const fetchOnePattern = (id) => {
-  return fetch(`http://pyrex-back.herokuapp.com/api/v1/patterns/${id}`)
+  return fetch(`http://localhost:3001/api/v1/patterns/${id}`)
     .then(res => {
       if (!res.ok) {
       throw new Error("Something went wrong.")
@@ -21,7 +21,7 @@ const fetchOnePattern = (id) => {
 };
 
 const postFavorite = ((id, name, img) => {
-  return fetch('http://pyrex-back.herokuapp.com/api/v1/patterns', {
+  return fetch('http://localhost:3001/api/v1/patterns', {
     method: 'POST',
     body: JSON.stringify ({
       "id": id, "name":name, "img":img
@@ -35,7 +35,7 @@ const postFavorite = ((id, name, img) => {
 
 
 const deleteFavorite = (id) => {
-  return fetch('http://pyrex-back.herokuapp.com/api/v1/favorites', {
+  return fetch('http://localhost:3001/api/v1/favorites', {
     method: 'DELETE',
     headers:{
       'Content-Type': 'application/json'
