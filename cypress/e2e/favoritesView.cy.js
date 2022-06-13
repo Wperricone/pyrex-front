@@ -44,14 +44,15 @@ describe('Pyrex home page view', () => {
   });
 });
 
-describe('Pyrex delete favorite', () => {
-  beforeEach(() => {
-    cy.visit('http://localhost:3000/favorites')
-})
-  it('Should have the pattern disappear when the delete button is clicked', () => {
-    cy.get('.delete-from-favorites')
-    .eq(0).dblclick()
-    cy.get('.favorites-detail')
-    .should('have.length', 4)
-  });
-});
+// describe('Pyrex delete favorite', () => {
+//   beforeEach(() => {
+//     cy.request('pyrex-back.herokuapp.com/api/v1/patterns')
+//     cy.visit('http://pyrex-front.herokuapp.com/favorites')
+// })
+//   it('Should have the pattern disappear when the delete button is clicked', () => {
+//     cy.get('.delete-from-favorites')
+//     .eq(0).dblclick()
+//     cy.get('.favorites-detail')
+//     .should('have.length', one less than before)
+//   });
+// });
