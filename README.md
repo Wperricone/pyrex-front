@@ -7,9 +7,9 @@
 Vintage Pyrex is a true treasure. There are so many patterns it is difficult to keep track of them! With Pyrex Party a user can see what the patterns look like and if the user likes it they can add it to their favorites list. A user starts off being able to see all the bright, beautiful patterns. If a user clicks on the 'Click Here to See More!' button, the user will be able to see the pattern and get some new options. If the pattern is not already in the user's favorites list, the button will say 'Add to Favorites'. If the pattern is already in the favorites list, the button will say 'Delete from Favorites'. From this page the user can also go to the favorites list, or back to the home page to see all of the patterns. From the home page the user can navigate to the Favorites page.
 
 ### [Pyrex Front-end GitHub Deploy Link](https://github.com/Wperricone/pyrex-front.git)
-### [Pyrex Front-end Heroku Deploy Link](pyrex-front.herokuapp.com/)
+### [Pyrex Front-end GH Pages Deploy Link](https://wperricone.github.io/pyrex-front/)
 ### [Pyrex-api GitHub Deploy Link](https://github.com/Wperricone/pyrex-back.git)
-### [Pyrex-api Heroku Deploy Link](pyrex-back.herokuapp.com/api/v1/patterns)
+### [Pyrex-api Heroku Deploy Link](https://pyrex-back.herokuapp.com/api/v1/patterns)
 
 
 ## Project Views
@@ -50,7 +50,7 @@ Vintage Pyrex is a true treasure. There are so many patterns it is difficult to 
 - In your terminal type `$cd pyrex-bak`
 - Type `$npm install`
 - Do not run `$npm audit fix --force`
-- Open [http://localhost:3001](http://localhost:3001) to view it in your browser.
+- Open [http://localhost:3001](http://localhost:3001) to view it in your browser, or to https://pyrex-back.herokuapp.com/api/v1/patterns to open on heroku.
 ### Once the API is running, follow these steps to start the front-end:
 
 - From the repo click the code button and copy the SSH link.
@@ -60,8 +60,8 @@ Vintage Pyrex is a true treasure. There are so many patterns it is difficult to 
 - Type `npm install`
 - Do not run `npm audit fix --force`
 - Then type `npm start` This runs the app in the development mode.
-- Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-- The browser should then deploy using a local host
+- Open [http://localhost:3000](http://localhost:3000) to view it in your browser, or https://wperricone.github.io/pyrex-front/ to view with the Heroku back-end deployment.
+- The browser should then deploy using a local host or GH pages
 - Enjoy using Pyrex Party!
 
 - NOTE: Make sure that you type `Control + C` in your terminal when you are done using the application. This ensure the server will stop running before your close your Terminal.
