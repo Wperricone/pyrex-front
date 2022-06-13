@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 
-
 const fetchAllPatterns = () => {
   return fetch('http://localhost:3001/api/v1/patterns')
   .then(res => {
     if(!res.ok) {
       throw new Error("Something went wrong")
     }
-
     return res.json();
   })
-}
+};
 
 const fetchOnePattern = (id) => {
   return fetch(`http://localhost:3001/api/v1/patterns/${id}`)
@@ -23,7 +21,6 @@ const fetchOnePattern = (id) => {
 };
 
 const postFavorite = ((id, name, img) => {
-
   return fetch('http://localhost:3001/api/v1/patterns', {
     method: 'POST',
     body: JSON.stringify ({
@@ -46,8 +43,6 @@ const deleteFavorite = (id) => {
     body:JSON.stringify({id})
   })
   .then(res => res.json())
-  }
-
-
+};
 
 export {fetchAllPatterns, fetchOnePattern, deleteFavorite, postFavorite}

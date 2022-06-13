@@ -1,9 +1,9 @@
 .nav-bar {
 height: 18vh;
 color: #45d2d8;
-/* font-size: 1vh; */
 font-family: 'Fascinate', cursive;
 }
+
 .navigation {
   display: flex;
   flex-direction: column;
