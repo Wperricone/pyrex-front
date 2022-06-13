@@ -13,12 +13,17 @@ Vintage Pyrex is a true treasure. There are so many patterns it is difficult to 
 ## Project Views
 
 ### Home view of all patterns and clicking on one to see more options:
+![Pyrex home](https://user-images.githubusercontent.com/96502923/173266202-9e10d274-bea6-456f-9f3a-6eafd1c7e87a.gif)
+
 
 ### From an individual pattern view, add the pattern to favorites and navigate to favorites:
+![Pyrex Add Fav](https://user-images.githubusercontent.com/96502923/173266539-7148fda3-4bc5-4c26-b8c3-a206977e2126.gif)
 
 ### From an individual pattern view, delete the pattern from favorites and navigate back home:
+![Pyrex del](https://user-images.githubusercontent.com/96502923/173266698-4e90f093-f70e-4ee3-a3ab-6acbb40dc1e9.gif)
 
-### From home, navigate to favorites
+### From home, navigate to favorites, and delete one favorite, and go back home:
+![Pyrex nav:del](https://user-images.githubusercontent.com/96502923/173266806-119be5f9-db55-4280-8a9e-7b67416d21a5.gif)
 
 
 
