@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+# Pyrex Party!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Solo Project
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+Vintage Pyrex is a true treasure. There are so many patterns it is difficult to keep track of them! With Pyrex Party a user can see what the patterns look like and if the user likes it they can add it to their favorites list. A user starts off being able to see all the bright, beautiful patterns. If a user clicks on the 'Click Here to See More!' button, the user will be able to see the pattern and get some new options. If the pattern is not already in the user's favorites list, the button will say 'Add to Favorites'. If the pattern is already in the favorites list, the button will say 'Delete from Favorites'. From this page the user can also go to the favorites list, or back to the home page to see all of the patterns. From the home page the user can navigate to the Favorites page.
 
-### `npm start`
+### [Pyrex Front-end Deploy Link](https://github.com/Wperricone/pyrex-front.git)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### [Pyrex-api Deploy Link](https://github.com/Wperricone/pyrex-back.git)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Views
 
-### `npm test`
+### Home view of all patterns and clicking on one to see more options:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### From an individual pattern view, add the pattern to favorites and navigate to favorites:
 
-### `npm run build`
+### From an individual pattern view, delete the pattern from favorites and navigate back home:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### From home, navigate to favorites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## React
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- This multi page App with React was an exercise for me to learn and grow my knowledge of interacting with endpoints that were created from my API.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Cypress Testing
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- All Testing of User views and user interactions
+- Error Handling of Server errors and invalid URLS Tested
+- Fetch requests are stubbed
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Local Set-Up Instructions
+### First, open the API by following these instructions:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- From the repo click the code button and copy the SSH link.
+- Open terminal by pressing command + space bar, and search for terminal
+- Inside of your terminal type `git clone` and then paste the ssh link. It should look like this: `$git clone https://github.com/Wperricone/pyrex-back.git`
+- In your terminal type `$cd pyrex-bak`
+- Type `$npm install`
+- Do not run `$npm audit fix --force`
+- Open [http://localhost:3001](http://localhost:3001) to view it in your browser.
+### Once the API is running, follow these steps to start the front-end:
 
-### Code Splitting
+- From the repo click the code button and copy the SSH link.
+- Open terminal by pressing command + space bar, and search for terminal
+- Inside of your terminal type `git clone` and then paste the ssh link. It should look like this: `git clone https://github.com/Wperricone/pyrex-front.git`
+- In your terminal type `cd pyrex-front`
+- Type `npm install`
+- Do not run `npm audit fix --force`
+- Then type `npm start` This runs the app in the development mode.
+- Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- The browser should then deploy using a local host
+- Enjoy using Pyrex Party!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- NOTE: Make sure that you type `Control + C` in your terminal when you are done using the application. This ensure the server will stop running before your close your Terminal.
 
-### Analyzing the Bundle Size
+## Instructions for Use
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- On opening the browser, a user is free to scroll all of the Pyrex patterns
+- Each pattern can be clicked on and from there added to the favorites list, or if it is already there, deleted from the list
+- A user can navigate between the home page and the favorites with the links in the navigation bar
+- Once in the favorites, a user can choose to delete any pattern they'd like
 
-### Making a Progressive Web App
+## Technologies Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- React
+- React Router
+- Cypress Testing
+- GET requests
+- POST requests
+- DELETE requests
+- ES6 JavaScript
+- CSS
+- HTML
+- Fetch Web API
 
-### Advanced Configuration
+## Future Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Add the ability to save a pattern to 'My Collection' in order to catalogue a user's collection.
+- Add a filter feature to filter my tags and colors.
 
-### Deployment
+## Project Management
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- I used a [Github Project Board](https://github.com/Wperricone/pyrex-front/projects/1) stay on task and meet the deadlines.
 
-### `npm run build` fails to minify
+### Figma Component Architecture
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Figma Plans](https://www.figma.com/file/WcoKh0P7InqavQVEALLxCA/Pyrex-Plan)
+
+
+## Contributors
+
+- [Whitney Perricone](https://github.com/Wperricone)

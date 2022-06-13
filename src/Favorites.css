@@ -1,12 +1,3 @@
-.all-favs-section {
-  /* padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  grid-gap: 0px;
-  background-color: #FFF;
-  color: #000;
-  justify-content: space-around; */
-}
 
 .favorites-detail {
   display: flex;
@@ -25,18 +16,16 @@
   justify-content: space-around;
 }
 
-.favs-title, .favorites-name {
-  color: #45d2d8;
-
-}
 .favs-title {
   font-size: 30px;
   margin-bottom: 0px;
   text-decoration: underline;
+  color: #45d2d8;
 }
 
 .favorites-name {
   margin-top: 5px;
+  color: #45d2d8;
 }
 
 .my-collection {
