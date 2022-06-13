@@ -6,9 +6,11 @@
 
 Vintage Pyrex is a true treasure. There are so many patterns it is difficult to keep track of them! With Pyrex Party a user can see what the patterns look like and if the user likes it they can add it to their favorites list. A user starts off being able to see all the bright, beautiful patterns. If a user clicks on the 'Click Here to See More!' button, the user will be able to see the pattern and get some new options. If the pattern is not already in the user's favorites list, the button will say 'Add to Favorites'. If the pattern is already in the favorites list, the button will say 'Delete from Favorites'. From this page the user can also go to the favorites list, or back to the home page to see all of the patterns. From the home page the user can navigate to the Favorites page.
 
-### [Pyrex Front-end Deploy Link](https://github.com/Wperricone/pyrex-front.git)
+### [Pyrex Front-end GitHub Deploy Link](https://github.com/Wperricone/pyrex-front.git)
+### [Pyrex Front-end Heroku Deploy Link](pyrex-front.herokuapp.com/)
+### [Pyrex-api GitHub Deploy Link](https://github.com/Wperricone/pyrex-back.git)
+### [Pyrex-api Heroku Deploy Link](pyrex-back.herokuapp.com/api/v1/patterns)
 
-### [Pyrex-api Deploy Link](https://github.com/Wperricone/pyrex-back.git)
 
 ## Project Views
 
