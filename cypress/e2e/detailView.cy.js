@@ -10,7 +10,9 @@ describe('Pyrex detail page view', () => {
     .contains('Click here for more options!').click()
     cy.url()
     .should('equal', "http://localhost:3000/patterns/1", {timeout: 2000})
+
     cy.visit('http://localhost:3000/patterns/1', {timeout: 2000})
+
   });
 
   it('Should have one tile', () => {

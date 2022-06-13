@@ -42,9 +42,11 @@ describe('Pyrex home page view', () => {
 
   });
 
+
   it('Should be able to click on the delete button', () => {
     cy.get('.delete-from-favorites')
     .eq(0).dblclick()
     cy.get('.favorites-detail')
   });
 });
+
