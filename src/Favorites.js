@@ -1,6 +1,8 @@
 import React from 'react';
 import { fetchAllPatterns, fetchOnePattern, deleteFavorite, postFavorite } from './apiCalls';
 import './Favorites.css';
+import PropTypes from 'prop-types';
+
 
 const Favorites = ( {favorites, collection, deleteFavorite} ) => {
 
@@ -37,3 +39,9 @@ const Favorites = ( {favorites, collection, deleteFavorite} ) => {
 
 
 export default Favorites;
+
+Favorites.propTypes = {
+  favorites: PropTypes.array,
+  deleteFavorite: PropTypes.func
+
+};
