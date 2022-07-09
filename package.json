@@ -44,6 +44,7 @@
   },
   "devDependencies": {
     "cypress": "^10.1.0",
-    "gh-pages": "^4.0.0"
+    "gh-pages": "^4.0.0",
+    "start-server-and-test": "^1.14.0"
   }
 }

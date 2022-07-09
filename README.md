@@ -100,6 +100,6 @@ Vintage Pyrex is a true treasure. There are so many patterns it is difficult to 
 [Figma Plans](https://www.figma.com/file/WcoKh0P7InqavQVEALLxCA/Pyrex-Plan)
 
 
-## Contributors
+## Contributors!
 
 - [Whitney Perricone](https://github.com/Wperricone)
